@@ -14,14 +14,18 @@ import win32com.client
 import psutil
 import pywintypes
 import traceback
-
+import configparser
 
 # Setup logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-AUTHORIZED_USERS = [5382194762, 7932433627, 1819756593]
-TOKEN = "7689905059:AAH1VRLiYeUJ0KOVDGMLgMvSMuwkFIz80HQ"
+# Load configuration from config.ini
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+TOKEN = config.get('Telegram', 'TOKEN')
+AUTHORIZED_USERS = list(map(int, config.get('Telegram', 'AUTHORIZED_USERS').split(',')))
 
 user_messages = {}
 user_files = {}
@@ -149,7 +153,6 @@ def print_image(image_path):
     """Render and print an image silently without dialogs."""
     try:
         from PIL import ImageWin
-
         logger.info("Printing image silently: %s", image_path)
         printer_name = win32print.GetDefaultPrinter()
         hprinter = win32print.OpenPrinter(printer_name)
