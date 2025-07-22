@@ -12,7 +12,7 @@ A Telegram bot that allows users to send documents and print them directly from 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Gauthampro7/telegram-print-bot.git
+    git clone https://github.com/Gauthampro7/telegram-print.git
     ```
 2. Install dependencies:
     ```bash
