@@ -43,21 +43,23 @@ A Telegram bot that allows authorized users to send text messages, images, Word 
 
 ## Configuration
 
-1. Create a `config.ini` file in the project root with the following content (replace placeholders with your values):
-   ```ini
-   [TELEGRAM]
-   # Your Telegram bot token
-   TOKEN = your_bot_token_here
+The configuration file is already present in the repository. To set up the Telegram bot, you need to add the following details to the config file:
 
-   # List of authorized Telegram user IDs (as a Python list)
-   AUTHORIZED_USERS = [your_user_id_1, your_user_id_2]
-   ```
-   - Example:
-     ```ini
-     [TELEGRAM]
-     TOKEN = 7689905059:AAH1VRLiYeUJ0KOVDGMLgMvSMuwkFIz80HQ
-     AUTHORIZED_USERS = [5382194762, 7932433627, 1819756593]
-     ```
+1. **Bot Token**:  
+   - Obtain the bot token from BotFather on Telegram.  
+   - Add the token to the config file under the appropriate field (e.g., `BOT_TOKEN` or similar, depending on the file structure).  
+
+2. **User ID**:  
+   - Identify the Telegram User ID for the account that will interact with the bot. You can get this by messaging `@userinfobot` on Telegram.  
+   - Add the User ID to the config file in the designated field (e.g., `USER_ID` or similar).  
+
+**Steps**:  
+- Open the configuration file in the repository (e.g., `config.ini`, `settings.py`, or similar).  
+- Locate the fields for the bot token and user ID.  
+- Insert the token and user ID values as required.  
+- Save the file and ensure it is correctly formatted.
+- Restart or redeploy the bot to apply the changes.  
+
 
 2. Ensure the script reads from `config.ini` (as per your code snippet).
 
